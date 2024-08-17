@@ -46,4 +46,12 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+     /**
+     * Relación con el modelo Position.
+     * Un User puede tener muchas Positions.
+     */
+    public function positions(){
+        return $this->hasMany(Position::class);
+    }
 }
